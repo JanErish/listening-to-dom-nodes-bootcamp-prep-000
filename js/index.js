@@ -6,3 +6,8 @@ main.addEventListener('click',function(event) {
   alert('I was clicked!');
 });
 
+code input = document.querySelector('input');
+
+input.addEventListener('keydown',function(e) {
+  console.log(e.which);
+}

@@ -20,12 +20,29 @@ input.addEventListener('keydown', function(e) {
   }
 });
 
+
+// Bubbling
 let divs = document.querySelectorAll('div');
 
 function bubble(e) {
   console.log(this.firstChild.nodeValue.trim() + 'bubbled');
 }
 
-for (let i=0l;i<divs.length;i++) {
+for (let i=0;i<divs.length;i++) {
   divs[i].addEventListener('click',bubble);
 }
+
+// Capturing
+
+divs = document.querySelectorAll('div');
+
+function capture(e) {
+  console.log(this.firsChild.nodeValue.trim() + 'captured');
+}
+
+for (let i=0;i<divs.length;i++) {
+  divs[i].addEventListener('click',capture,true);
+}
+
+
+

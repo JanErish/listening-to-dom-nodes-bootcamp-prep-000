@@ -34,7 +34,6 @@ for (let i=0;i<divs.length;i++) {
 
 // Capturing
 
-divs = document.querySelectorAll('div');
 
 function capture(e) {
   console.log(this.firsChild.nodeValue.trim() + 'captured');
@@ -47,5 +46,14 @@ for (let i=0;i<divs.length;i++) {
 
 // Stop Propagation
 
+function bubble(e) {
+  e.stopPropagation();
+  
+  console.log(this.firstChild.nodeValue.trim() + 'bubbled');
+}
+
+for (let i=0;i<divs.length;i++) {
+  divs[i].addEventListener('click',bubble);
+}
 
 
